@@ -1,3 +1,4 @@
+// Variables
 var message = "Say my name.";
 console.log(message);
 message = "I'm one of the survivors of the apocalypse of June 27, 2020";
@@ -47,7 +48,7 @@ let html = `
 
 contenedorApp.innerHTML = html;
 
-
+// Functions
 function greeting(name){
     console.log(`Hola ${name}`);
 }
@@ -75,3 +76,16 @@ const todo = function(name='Walter', activity='cocinar meta.'){
 
 todo('Jesse');
 todo('Heisenberg', 'matar a Gus.');
+
+// Arrow functions
+let travel = function(destination){
+    return `Viajando a ${destination}`;
+}
+
+let traveling = travel('Rio de Janeiro');
+console.log(traveling);
+
+let travel2 = (destination, days) => `Viajando a ${destination} por ${days} días`;
+
+let traveling2 = travel2('Buzios',5);
+console.log(traveling2);
