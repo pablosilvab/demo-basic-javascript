@@ -89,3 +89,26 @@ let travel2 = (destination, days) => `Viajando a ${destination} por ${days} día
 
 let traveling2 = travel2('Buzios',5);
 console.log(traveling2);
+
+// Objetos
+const persona = {
+    name: 'Walter',
+    age: 52
+}
+
+console.log(persona);
+console.log(`${persona.name} tiene ${persona.age} años.`);
+console.log(`${persona['name']} tiene ${persona['age']} años.`);
+
+function Travel(from, to){
+    this.from = from;
+    this.to = to;
+}
+
+Travel.prototype.trackingTravel = function()  {
+    return `El viaje es desde ${this.from} a ${this.to}`;
+}
+
+const travel1 = new Travel('Santiago', 'Lima');
+console.log(travel1);
+console.log(travel1.trackingTravel());
