@@ -7,14 +7,6 @@ console.log(message);
 message = 2020
 console.log(message);
 
-const msg = 'Hello';
-console.log(msg);
-
-let name;
-console.log(name);
-name = 'Walter White';
-console.log(name);
-
 var message = "Say my name.";
 console.log('1. Walter say: ', message);
 if (message){
@@ -31,3 +23,26 @@ if (walterMessage){
     console.log('2. Heisenberg say: ', walterMessage);
 }
 console.log('3. Heisenberg say: ', walterMessage);
+
+
+const name = 'Pablo';
+const position = 'Developer';
+
+console.log('Forma antigua  : Nombre: '+ name + ', Trabajo: '+ position);
+console.log(`Nueva forma    : Nombre: ${name}, Trabajo: ${position}`);
+
+const contenedorApp = document.querySelector('#app');
+// let html = '<ul>'+
+//                 '<li> Nombre: '+name+ '</li>' + 
+//                 '<li> Trabajo: '+position+ '</li>' + 
+//             '</ul>';
+
+let html = `
+    <ul>
+        <li>Nombre: ${name}</li>
+        <li>Trabajo: ${position}</li>
+    </ul>
+    `
+
+
+contenedorApp.innerHTML = html;
