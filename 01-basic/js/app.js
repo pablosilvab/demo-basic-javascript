@@ -46,3 +46,32 @@ let html = `
 
 
 contenedorApp.innerHTML = html;
+
+
+function greeting(name){
+    console.log(`Hola ${name}`);
+}
+
+greeting('Walter');
+
+
+const client = function(name){
+    console.log('Datos del cliente: ' + name);
+}
+
+client('Walter White');
+
+
+function doing(name='Walter', activity='cocinando meta.'){
+    console.log(`${name} está ${activity}`);
+}
+
+doing('Pablo','recordando Js porque no recuerda.');
+doing('Jesse Pinkmann');
+
+const todo = function(name='Walter', activity='cocinar meta.'){
+    console.log(`${name} debe ${activity}`);
+}
+
+todo('Jesse');
+todo('Heisenberg', 'matar a Gus.');
