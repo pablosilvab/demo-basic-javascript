@@ -26,11 +26,11 @@ if (walterMessage){
 console.log('3. Heisenberg say: ', walterMessage);
 
 
-const name = 'Pablo';
+const myname = 'Pablo';
 const position = 'Developer';
 
-console.log('Forma antigua  : Nombre: '+ name + ', Trabajo: '+ position);
-console.log(`Nueva forma    : Nombre: ${name}, Trabajo: ${position}`);
+console.log('Forma antigua  : Nombre: '+ myname + ', Trabajo: '+ position);
+console.log(`Nueva forma    : Nombre: ${myname}, Trabajo: ${position}`);
 
 const contenedorApp = document.querySelector('#app');
 // let html = '<ul>'+
@@ -40,7 +40,7 @@ const contenedorApp = document.querySelector('#app');
 
 let html = `
     <ul>
-        <li>Nombre: ${name}</li>
+        <li>Nombre: ${myname}</li>
         <li>Trabajo: ${position}</li>
     </ul>
     `
@@ -112,3 +112,28 @@ Travel.prototype.trackingTravel = function()  {
 const travel1 = new Travel('Santiago', 'Lima');
 console.log(travel1);
 console.log(travel1.trackingTravel());
+
+const tvshow = {
+    name: 'Better Call Saul',
+    characters: ['Saul Goodman', 'Mike Ehrmantraunt', 'Kim Wexler'],
+    information: {
+        seasons: 5,
+        episodes: 50
+    }
+
+}
+
+console.log(tvshow);
+
+let nameTvshow = tvshow.name;
+let episodesTvshow = tvshow.information.episodes;
+
+console.log(`Episodios de ${nameTvshow}: ${episodesTvshow}`);
+
+// Destructuring
+let {characters, information} = tvshow;
+console.log(characters);
+console.log(information );
+
+let {seasons} = tvshow.information;
+console.log(seasons);
