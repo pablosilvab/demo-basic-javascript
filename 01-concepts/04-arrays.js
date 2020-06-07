@@ -26,5 +26,16 @@ let actors = ['Bryan Cranston', 'Tom Hanks', 'Robert Downey Jr.'];
 let cast = actors.concat(actresses);
 console.log(cast);
 
+// Spread 
 let newCast = [...actors,...actresses];
 console.log(newCast);
+
+let [lastActor] = newCast.reverse();
+console.log(`El último actor es  ${lastActor}. Pero el arreglo está invertido por usar reverse. `);
+console.log(newCast);
+
+console.log(actresses);
+let [lastActress] = [...actors].reverse();
+console.log(`La última actriz es ${lastActress}. El arreglo no está invertido, es la ventaja de usar spread.`);
+console.log(actresses);
+
