@@ -1,43 +1,37 @@
-const downloadUsers = quantity => new Promise((resolve, reject) => {
-    const api = `https://randomuser.me/api/?results=${quantity}&nat=us`;
-
-    // Ajax
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', api, true);
-    xhr.onload = () => {
-        if (xhr.status === 200) {
-            resolve(JSON.parse(xhr.responseText).results);
-        } else {
-            reject(Error(xhr.statusText));
-        }
+class Person {
+    // lo primero que se ejecuta una vez que se crea la instancia
+    constructor(name, ocupation){
+        this.name = name;
+        this.ocupation = ocupation;
     }
-    xhr.onerror = (error) => reject(error);
-    xhr.send();
 
-});
-
-downloadUsers(13)
-    .then(
-        members => printHTML(members),
-        error => console.error(
-            new Error(`Hubo un error ${error}`)
-        )
-    )
-
-function printHTML(users){
-    let html = '';
-    users.forEach(user => {
-        console.log(user);
-        html += `
-        <li>
-            Nombre: ${user.name.first} ${user.name.last }
-            Email: ${user.email}
-            Teléfono: ${user.phone}
-            <img src="${user.picture.medium}"/>
-        </li>`
-    });
-
-    const content = document.querySelector('#app');
-
-    content.innerHTML = html;
+    getInfo(){
+        return `${this.name} es ${this.ocupation}`;
+    }
 }
+
+class Sayayin extends Person {
+    constructor(name, ocupation, fightingPower){
+        super(name, ocupation);
+        this.fightingPower = fightingPower;
+    }
+
+    getInfo(){
+        return `${this.name} es ${this.ocupation} y su poder de pelea es de ${this.fightingPower}`;
+    }
+}
+
+let person1 = new Person('Walter White', 'Profesor de Química');
+let person2 = new Person('Vegeta', 'Principe de los Sayayin');
+
+
+console.log(person1.getInfo());
+console.log(person2.getInfo());
+
+// Sayayin
+let sayain1 = new Sayayin('Vegeta', 'Principe de los Sayayin', 8000);
+let sayain2 = new Sayayin('Kakaroto', 'Luchador de artes marciales', 10000);
+
+
+console.log(sayain1.getInfo());
+console.log(sayain2.getInfo());
