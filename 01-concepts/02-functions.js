@@ -1,53 +1,3 @@
-// Variables
-var message = "Say my name.";
-console.log(message);
-message = "I'm one of the survivors of the apocalypse of June 27, 2020";
-console.log(message);
-message = 'Dios mio no recordaba Javascript, que tonto.';
-console.log(message);
-message = 2020
-console.log(message);
-
-var message = "Say my name.";
-console.log('1. Walter say: ', message);
-if (message){
-    var message = 'I am not in danger Skyler, I am the danger.';
-    console.log('2. Walter say: ', message);
-}
-console.log('3. Walter say: ', message);
-
-
-let walterMessage  = "I am the who knocks.";
-console.log('1. Heisenberg say: ', walterMessage);
-if (walterMessage){
-    let walterMessage = 'I am not in danger Skyler, I am the danger.';
-    console.log('2. Heisenberg say: ', walterMessage);
-}
-console.log('3. Heisenberg say: ', walterMessage);
-
-
-const myname = 'Pablo';
-const position = 'Developer';
-
-console.log('Forma antigua  : Nombre: '+ myname + ', Trabajo: '+ position);
-console.log(`Nueva forma    : Nombre: ${myname}, Trabajo: ${position}`);
-
-const contenedorApp = document.querySelector('#app');
-// let html = '<ul>'+
-//                 '<li> Nombre: '+name+ '</li>' + 
-//                 '<li> Trabajo: '+position+ '</li>' + 
-//             '</ul>';
-
-let html = `
-    <ul>
-        <li>Nombre: ${myname}</li>
-        <li>Trabajo: ${position}</li>
-    </ul>
-    `
-
-
-contenedorApp.innerHTML = html;
-
 // Functions
 function greeting(name){
     console.log(`Hola ${name}`);
@@ -137,3 +87,18 @@ console.log(information );
 
 let {seasons} = tvshow.information;
 console.log(seasons);
+
+// Object Literal Enhacement
+const band = 'Pearl Jam';
+const genre = 'Alternative Rock'
+const songs = ['Just Breathe', 'Alive','Black'];
+
+const pearlJam = {
+    band: band,
+    genre: genre,
+    songs: songs
+}
+ 
+const newPearlJam = {band, genre, songs};
+
+console.log(newPearlJam);
